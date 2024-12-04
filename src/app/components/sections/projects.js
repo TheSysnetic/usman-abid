@@ -116,7 +116,7 @@ export default function Projects() {
       {/* Toggle Show All / Show Less */}
       <div className="mt-12">
         <a
-          className="inline-flex items-center font-medium leading-tight text-slate-200  font-semibold text-slate-200 group decoration-transparent hover:decoration-current transition duration-200"
+          className="inline-flex items-center font-medium leading-tight text-slate-200  font-semibold  group decoration-transparent hover:decoration-current transition duration-200"
           href="#projects"
           onClick={() => setShowAll(!showAll)}
         >
