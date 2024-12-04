@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Skills() {
   const skills = [
     {
@@ -88,10 +90,12 @@ export default function Skills() {
             <div className="flex flex-wrap gap-4">
               {skillCategory.items.map((item, itemIndex) => (
                 <div key={itemIndex} className="text-center">
-                  <img
+                  <Image
                     src={item.image}
                     alt={item.name}
-                    className="w-14 h-14 object-contain p-2 rounded-lg"
+                    className="object-contain p-2 rounded-lg"
+                    height={56}
+                    width={56}
                   />
                   <p className="mt-2 text-xs text-slate-600">{item.name}</p>
                 </div>

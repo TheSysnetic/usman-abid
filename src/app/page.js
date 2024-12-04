@@ -33,14 +33,14 @@ export default function Home() {
       <div id="__next" className="relative">
         <div className="__variable_20b187 fixed inset-0 z-0 pointer-events-none"></div>
 
-        <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0 relative z-10">
+        <div className="mx-auto min-h-screen max-w-screen-2xl px-6 py-12 md:px-12 md:py-20 lg:px-24 lg:py-0 relative z-10">
           <div className="lg:flex lg:justify-between lg:gap-4">
-            <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+            <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/3 lg:flex-col lg:justify-between lg:py-24">
               <Hero />
               <Nav />
               <Social />
             </header>
-            <main id="content" className="pt-40 lg:w-1/2 lg:py-24">
+            <main id="content" className="lg:w-2/3 pt-24 lg:pl-24 lg:py-24">
               <Experience />
               <Skills />
               <Projects />

@@ -6,7 +6,7 @@ export default function Contact() {
       aria-label="Contact Us"
     >
       <div className="flex flex-col xl:flex-row gap-12 justify-center items-center">
-        <div className=" m1-24flex-[0.75] w-full max-w-4xl p-8 rounded-xl bg-slate-900 border-4 border-slate-800">
+        <div className="w-full p-8 rounded-xl bg-slate-900 border-4 border-slate-800">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-200 sm:text-5xl">
             Contact Us
           </h1>

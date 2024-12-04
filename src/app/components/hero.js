@@ -6,7 +6,7 @@ export default function Hero() {
         <a href="/">Usman Abid</a>
       </h1>
       <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">
-        Senior Software Engineer at InvoZone | UCP '17
+        Senior Software Engineer at InvoZone | UCP &apos;17
       </h2>
       <p className="mt-4 max-w-xs leading-normal text-slate-500">
         As a Senior Software Engineer at InvoZone, I focus on architecting

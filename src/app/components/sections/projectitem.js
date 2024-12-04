@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 function ProjectModal({ project, onClose }) {
   useEffect(() => {
@@ -34,10 +35,12 @@ function ProjectModal({ project, onClose }) {
 
         {/* Project Image */}
         {project.imageUrl && (
-          <img
+          <Image
             src={project.imageUrl}
             alt={project.name}
-            className="rounded-lg mb-6 w-64 max-h-60 object-cover"
+            className="rounded-lg mb-6 object-cover"
+            width={256}
+            height={240}
           />
         )}
 
@@ -135,7 +138,7 @@ function ProjectItem({ project }) {
           </ul>
         </div>
         {isModalOpen && project.imageUrl && (
-          <img
+          <Image
             alt={project.name}
             loading="lazy"
             width={200}
