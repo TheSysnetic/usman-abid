@@ -65,8 +65,7 @@ export default function Skills() {
         { name: "DynamoDB", image: "/assets/database/dynamodb.png" },
         { name: "Redis", image: "/assets/database/redis.png" },
         { name: "Cassandra", image: "/assets/database/cassandra.png" },
-        { name: "CouchDB", image: "/assets/database/couchdb.png" },
-        { name: "Amazon Neptune", image: "/assets/database/neptune.png" },
+        { name: "CouchDB", image: "/assets/database/couchdb.png" }
       ],
     },
   ];
@@ -106,4 +105,5 @@ export default function Skills() {
       </div>
     </section>
   );
+
 }
