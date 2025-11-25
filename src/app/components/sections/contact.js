@@ -8,7 +8,7 @@ export default function Contact() {
       <div className="flex flex-col xl:flex-row gap-12 justify-center items-center">
         <div className="w-full p-8 rounded-xl bg-slate-900 border-4 border-slate-800">
           <h1 className="text-4xl font-extrabold tracking-tight text-slate-200 sm:text-5xl">
-            Contact Us
+            Contact Me
           </h1>
           <p className="mt-4 text-lg font-medium text-slate-400 sm:text-xl">
             We’d love to hear from you! Fill out the form below to get in touch.
@@ -75,4 +75,5 @@ export default function Contact() {
     </section>
   );
 }
+
 
