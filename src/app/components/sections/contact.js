@@ -3,7 +3,7 @@ export default function Contact() {
     <section
       id="contact"
       className="font-sans mb-16 scroll-mt-16 md:mb-24 lg:mb-36 lg:scroll-mt-24"
-      aria-label="Contact Us"
+      aria-label="Contact Me"
     >
       <div className="flex flex-col xl:flex-row gap-12 justify-center items-center">
         <div className="w-full p-8 rounded-xl bg-slate-900 border-4 border-slate-800">
@@ -75,3 +75,4 @@ export default function Contact() {
     </section>
   );
 }
+
