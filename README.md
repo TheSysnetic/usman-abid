@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Usman Abid — Portfolio
 
-## Getting Started
+Personal portfolio built with **Next.js 16**, **React 19**, **TypeScript**, **Tailwind CSS v4**,
+**Motion** and **React Three Fiber**.
 
-First, run the development server:
+Two fixed WebGL layers sit behind the page:
+
+- **Aurora** — a soft, half-resolution colour wash whose palette follows the section in view.
+- **Particle typography** — ~15k particles assemble into the name on load, scatter from the cursor,
+  burst into a faint starfield as you scroll, and regroup as "Let's talk" at the contact section.
+  They sample the real HTML headings (`[data-particles]`), which stay in the page for screen readers
+  and become visible when WebGL is unavailable or reduced motion is requested.
+
+Scroll-driven sections (Motion): sticky experience progress, sideways-scrolling capability words,
+and a pinned horizontal "coverflow" project gallery.
+
+## Getting started
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+| Script              | What it does                      |
+| ------------------- | --------------------------------- |
+| `npm run dev`       | Start the dev server (Turbopack)  |
+| `npm run build`     | Production build                  |
+| `npm start`         | Serve the production build        |
+| `npm run lint`      | ESLint (Next.js core web vitals)  |
+| `npm run typecheck` | TypeScript, no emit               |
+| `npm run format`    | Prettier + Tailwind class sorting |
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Set `NEXT_PUBLIC_SITE_URL` (e.g. `https://usmanabid.dev`) in production so Open Graph images resolve.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Editing content
 
-## Learn More
+All copy (profile, experience, projects, capabilities, education) lives in
+[`src/content/site.ts`](src/content/site.ts). Project logos are in `public/assets/projects/`.
 
-To learn more about Next.js, take a look at the following resources:
+## Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
+src/
+  app/                 layout, page, global styles (Tailwind v4 theme tokens)
+  content/site.ts      every piece of text on the site
+  components/
+    layout/            header, footer, smooth scrolling (Lenis)
+    sections/          Hero, About, Experience, Capabilities, Work, Contact
+    three/             backdrop canvases, aurora + particle shaders, text sampler
+    ui/motion.tsx      reveal / text animation primitives
+  lib/                 small hooks (media queries, clock, in-viewport, scroll-to)
+scripts/enhance-portrait.py   reproducible portrait retouch (Pillow)
+```

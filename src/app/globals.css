@@ -1,24 +1,101 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+@theme {
+  --color-ink: #0a0a0b;
+  --color-ink-2: #111113;
+  --color-paper: #ededeb;
+  --color-muted: #8a8a90;
+  --color-faint: #4a4a50;
+  --color-line: rgb(255 255 255 / 0.09);
+  --color-accent: #b8a6ff;
+
+  --color-violet: #7c5cff;
+  --color-pink: #ff4fa3;
+  --color-coral: #ff6b4a;
+  --color-sun: #ffc857;
+  --color-mint: #3ce0b5;
+  --color-sky: #4f8cff;
+
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-body {
-  background-color: #0f172a;
-  color: #94a3b8;
+@layer base {
+  html {
+    background: var(--color-ink);
+    color-scheme: dark;
+  }
+  body {
+    @apply bg-ink font-sans text-paper antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: var(--color-violet);
+    color: white;
+  }
+  :focus-visible {
+    outline: 1px solid var(--color-accent);
+    outline-offset: 4px;
+  }
 }
 
-.img-dev {
-  width: 150px;
-  height: 150px;
-  border-radius: 100%;
-  background-image: url("/logo-me.jfif");
-  background-size: cover;
-  background-position: center;
+@utility container-page {
+  @apply mx-auto w-full max-w-[1400px] px-5 sm:px-8 lg:px-12;
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-violet),
+    var(--color-pink) 35%,
+    var(--color-coral) 65%,
+    var(--color-sun)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility bg-gradient-brand {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-violet),
+    var(--color-pink) 35%,
+    var(--color-coral) 65%,
+    var(--color-sun)
+  );
+}
+
+@utility label {
+  @apply font-mono text-[11px] tracking-[0.14em] text-muted uppercase;
+}
+
+/* While particle typography is running, the real text stays for screen readers but is drawn by WebGL. */
+.particles-on [data-particles] {
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
