@@ -13,26 +13,26 @@ function yearsSince(date: string) {
 function Portrait() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], ["-8%", "8%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
   // The in-view trigger sits on an unclipped wrapper: IntersectionObserver
   // honours clip-path, so a fully clipped element would never "enter" view.
   return (
     <motion.div ref={ref} initial="hidden" whileInView="shown" viewport={{ once: true, amount: 0.3 }}>
       <motion.div
-        className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-ink-2"
+        className="group relative aspect-[4/5] overflow-hidden rounded-2xl bg-ink-2 ring-1 ring-line"
         variants={{
           hidden: { clipPath: "inset(100% 0% 0% 0% round 16px)" },
           shown: { clipPath: "inset(0% 0% 0% 0% round 16px)" },
         }}
         transition={{ duration: 1.4, ease: easeOutExpo }}
       >
-        <motion.div style={{ y }} className="absolute inset-x-0 -inset-y-[10%]">
+        <motion.div style={{ y }} className="absolute inset-x-0 -inset-y-[8%]">
           <Image
             src={profile.photo}
             alt={`Portrait of ${profile.name}`}
             fill
             sizes="(min-width: 768px) 30vw, 90vw"
-            className="object-cover"
+            className="object-cover transition-transform duration-[1.4s] ease-out-expo group-hover:scale-[1.03]"
           />
         </motion.div>
       </motion.div>

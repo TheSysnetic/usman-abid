@@ -49,5 +49,4 @@ src/
     three/             backdrop canvases, aurora + particle shaders, text sampler
     ui/motion.tsx      reveal / text animation primitives
   lib/                 small hooks (media queries, clock, in-viewport, scroll-to)
-scripts/enhance-portrait.py   reproducible portrait retouch (Pillow)
 ```

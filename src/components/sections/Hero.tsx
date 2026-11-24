@@ -40,9 +40,10 @@ export function Hero() {
         The name is drawn by the particle layer (see three/ParticleType). These spans
         define its exact position and font, and remain visible when WebGL is off.
         No transforms here: the particles sample these boxes.
+        The -0.025em offset optically centres the ink: "U" carries more side bearing than "d".
       */}
       <motion.h1
-        className="container-page text-[16.5vw] leading-[0.82] font-semibold tracking-[-0.06em] whitespace-nowrap 2xl:text-[15rem]"
+        className="relative -left-[0.025em] container-page text-center text-[16.5vw] leading-[0.82] font-semibold tracking-[-0.06em] whitespace-nowrap 2xl:text-[15rem]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1.2, delay: 0.1 }}

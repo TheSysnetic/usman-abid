@@ -29,7 +29,7 @@ export const profile = {
   location: "Lahore, Pakistan",
   timeZone: "Asia/Karachi",
   email: "usmanabid935@gmail.com",
-  photo: "/images/usman.jpg",
+  photo: "/images/usman-abid.jpg",
   careerStart: "2021-10-01",
   headline: "I turn complex ideas into production‑ready, scalable systems.",
   intro:
